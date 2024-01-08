@@ -594,10 +594,9 @@ async def youtube_redirect():
 async def twitter_redirect():
     return redirect(glob.config.twitter)
 
-@frontend.route('/instagram')
-@frontend.route('/ig')
+@frontend.route('/twitch')
 async def instagram_redirect():
-    return redirect(glob.config.instagram)
+    return redirect(glob.config.twitch)
 
 # profile customisation
 BANNERS_PATH = Path.cwd() / '.data/banners'
