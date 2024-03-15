@@ -146,3 +146,4 @@ config.py
 .data/*
 !.data/backgrounds/.gitkeep
 !.data/banners/.gitkeep
+/ext/nginx.conf
