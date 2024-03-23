@@ -19,12 +19,15 @@
                     </div>
                     <div class="map-title-block">
                         <div class="map-title">
-                            <a class="beatmap-link">
+                            <a class="beatmap-link" v-bind:href="'https://osu.pinoptserver.website/beatmaps/' +  + map.beatmap.id">
                                 <% map.beatmap.artist %> - <% map.beatmap.title %> [<% map.beatmap.version %>] <!--<span v-if="map.mods != 0">+ <% modsStr(map.mods) %></span>-->
                             </a>
                         </div>
                         <div class="play-stats">
-                            <% addCommas(map.score) %> / <% map.max_combo %><b>x</b>
+                            <% addCommas(map.score) %> - <b>x</b><% map.max_combo %>/<% map.beatmap.max_combo %>
+                        </div>
+                        <div class="accuracy-stats">
+                            [<% map.n300 %>/<% map.n100 %>/<% map.n50 %>/<% map.nmiss %>]
                         </div>
                         <div class="map-date">
                             <time>
