@@ -557,6 +557,16 @@ html {
   overflow: hidden;
 }
 
+.beatmap-version {
+  width: 400px;
+  overflow: hidden;
+}
+
+.accuracy-stats {
+  width: 400px;
+  overflow: hidden;
+}
+
 span.beatmap-mapper {
   padding-right: 8px;
 }

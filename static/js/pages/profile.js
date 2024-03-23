@@ -42,7 +42,10 @@ new Vue({
             mode: mode,
             mods: mods,
             modegulag: 0,
-            userid: userid
+            userid: userid,
+            modbitwisestrings: [
+                "NF", "EZ", "TD", "HD", "HR", "SD", "DT", "RX", "HT", "NC", "FL", "AT", "SO", "AP", "PF", "4K", "5K", "6K", "7K", "8K", "FI", "RD", "CN", "TP", "9K", "CO", "1K", "3K", "2K", "V2", "MR"
+            ]
         };
     },
     created() {
@@ -228,6 +231,20 @@ new Vue({
                 case 'mania':
                     return 3;
             }
+        },
+        IntToStrMod(number) {
+            if(number === 0){
+                return "NM";
+            }
+            let stringRepresentation = "";
+      
+            this.modbitwisestrings.forEach((modbitwisestrings, index) => {
+              if ((number >> index) & 1) {
+                stringRepresentation += modbitwisestrings;
+              }
+            });
+            
+            return stringRepresentation.trim();
         },
     },
     computed: {}
